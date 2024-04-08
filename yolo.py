@@ -1,12 +1,16 @@
 from ultralytics import YOLO 
 
-# Este es nuestro modelo base. El problema con este modelo es que no detecta demasiado bien
-# la bola de tenis, por lo que intentaremos finetunnear este modelo para mejorar su rendimiento.
-# Igualmente, el modelo en si, si que detecta bien los jugadores.
-model = YOLO('yolov8x')
+# This is our base model. The issue with this model is that it doesn't detect the tennis ball
+# very well, so we will try to fine-tune this model to improve its performance. 
+# Nonetheless, the model itself does detect the players accurately.
+model = YOLO('yolov8x') 
+# Selected the last Yolo model at that moment.
+
+# The model was trained in google colab to use GPU and to have a better performance.
+# Check training folder for more info.
+
+# Model post-finetunning.
+# model = YOLO('finetunned_models/best.pt')
 
 result = model.track('input/input_video.mp4',  save=True)
 print(result)
-print("boxes:")
-for box in result[0].boxes:
-    print(box)
