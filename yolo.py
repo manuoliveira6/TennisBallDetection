@@ -4,13 +4,7 @@ from ultralytics import YOLO
 # very well, so we will try to fine-tune this model to improve its performance. 
 # Nonetheless, the model itself does detect the players accurately.
 model = YOLO('yolov8x') 
-# Selected the last Yolo model at that moment.
-
-# The model was trained in google colab to use GPU and to have a better performance.
-# Check training folder for more info.
-
-# Model post-finetunning.
-# model = YOLO('finetunned_models/best.pt')
+# Selected the best Yolo model at that moment.
 
 result = model.track('input/input_video.mp4',  save=True)
 print(result)
