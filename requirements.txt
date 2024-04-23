@@ -1,2 +1,6 @@
 ultralytics==8.1.44
 roboflow==1.1.26
+torch==2.2.2
+python-dotenv==1.0.1
+opencv-python==4.9.0.80
+pandas==2.2.1
